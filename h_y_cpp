@@ -1,0 +1,104 @@
+
+///////////////////////////////////////////////////// PUNTO H  //////////////////////////////////////////////
+#include "libro"
+
+using namespace std;
+template <typename t>
+class lista_simple {
+
+    public:
+    //aca van las funciones
+    lista();
+    ~lista();
+    //es el que elimina lo que ocupa el tipo en memoria
+
+    void agregar_inicio ();
+    //agrega un nodo al incio
+
+    void agregar_ordenado();
+    //agrega un nodo entre dos nodos, de manera ordenada
+
+    void agregar_fin();
+    //agrega un nodo al final, lo vamos a usar en el caso de que la long lista < 10
+
+    int longlista () const;
+    //devuelve la longitud de la lista
+
+    void recorreryimprimir () const;
+    // recorre la lista e imprime lo usaremos al final
+
+    private:
+    struct nodo {
+        nodo *siguiente;
+        //el puntero al siguiente nodo
+        T elemento
+        // yo creo que esto sera del tipo libro hay que ver como se implementa
+    };
+    //la estructura del nodo
+    nodo *primero
+    //tengo que ver si este se usa
+
+    void eliminarlista ();
+    //elimina la lista una vez que la imprime y termina el problema
+
+};
+///////////////////////////////////////////// PUNTO CPP ///////////////////////////////////////////////////////////////////////////
+
+#include "lista_simple.h"
+#include ""
+
+using namespace std;
+//el std este no se si se usa
+
+
+template <typename T> Lista<T>::Lista() {
+//crea nodos basicamente
+    nodo* primernodo= new nodo;
+    //entiendo que creo al nodo no se bien
+    primernodo*siguiente=nullptr;
+    //el siguiente no apunta a nada porque todavia no existe la lista en si
+    primernodo*elemento=libro;
+    //importante! hay que ver como poner como va el libro aca adentro
+}
+ template <typename T> Lista<T>::agregar_inicio(//le vamos a pasar &nodo y los datos del luibro  ) 
+{
+//feli en los paramentros vamos a tener que pasarle el tipo libro, todavia no se bien como hacer eso
+    nodo *aux=new nodo;
+    //creo un nodo
+    aux->elemento=libro;
+    //meto el objeto libro aca adentro ni idea como se hace pero ya veremos
+    aux->sig=primernodo;
+    //hago que el actual apuntando al siguiente  apunte al principio de la lista
+    primernodo=aux;
+    //el primero de la lista se convierte en nuestro nodo actual
+ }
+ template <typename T> Lista<T>::agregar_ordenado(){
+
+ }
+template <typename T> Lista<T>::agregar_fin(){
+    nodo*aux=new nodo;
+    //creo el nodo
+    aux->elemento=libro;
+    //le asgino el valor del libro
+    aux->siguiente=nullptr;
+    //como es el ultimo el siguiente apunta a nada
+    if (primero = nullptr){
+    //pregunto si la lista esta vacia
+        primero=aux;
+        primero
+    }
+}
+}
+
+template <typename T> Lista<T>::longlista(){ //este te tira la longitud de la lista 
+    if (nodo == nullptr){
+        return;
+    }
+    if (nodo != nullptr){
+    //pregunto si la lista ya llego a su fin
+    longitud++;
+    //sea longitud una var iniciada en 0
+    longlista(nodo->siguiente,longitud);
+    //paso al siguiente de la lista
+    }
+}
